@@ -1,0 +1,262 @@
+/* General */
+body {
+  font-family: 'Georgia', serif;
+  background: #fdfdf8 url('dandelion-bg.png') no-repeat top right fixed;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+header {
+  background-color: #b4d9b4;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Dancing Script', cursive;
+  position: relative;
+}
+
+nav {
+  background: #aab3aa;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+.content {
+  flex: 2;
+}
+
+aside {
+  flex: 1;
+  background: #f7e9a0;
+  padding: 20px;
+  border-left: 5px solid #aab3aa;
+  border-radius: 8px;
+}
+
+aside h3 {
+  margin-top: 0;
+}
+
+.post {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  transition: transform 0.2s ease;
+  position: relative;
+}
+
+.post:hover {
+  transform: scale(1.01);
+}
+
+.post .read-more {
+  margin-top: 10px;
+  display: inline-block;
+  background: #aab3aa;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  text-decoration: none;
+}
+
+.post .read-more:hover {
+  background: #91a39b;
+}
+
+input[type="text"], textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #b4d9b4;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #aab3aa;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+}
+
+button:hover {
+  background-color: #91a39b;
+}
+
+blockquote {
+  margin-top: 15px;
+  font-style: italic;
+  background-color: #ffffffa8;
+  border-left: 5px solid #b4d9b4;
+  padding: 15px;
+  border-radius: 8px;
+  transition: opacity 0.3s;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  background-color: #aab3aa;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.fluff {
+  position: absolute;
+  top: -50px;
+  width: 15px;
+  height: 15px;
+  background: url('fluff.svg') no-repeat center;
+  background-size: contain;
+  animation: float 20s linear infinite;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(120vh) rotate(720deg);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Modo oscuro */
+body.dark {
+  background-color: #121212;
+  color: #eee;
+  background-image: none;
+}
+
+body.dark header {
+  background-color: #333;
+  color: #eee;
+}
+
+body.dark nav {
+  background-color: #222;
+}
+
+body.dark nav a {
+  color: #eee;
+}
+
+body.dark .content, body.dark aside {
+  background-color: #222;
+  color: #eee;
+}
+
+body.dark .post {
+  background-color: #333;
+  box-shadow: none;
+}
+
+body.dark blockquote {
+  background-color: #444a;
+  border-left-color: #666;
+  color: #ccc;
+}
+
+body.dark footer {
+  background-color: #333;
+  color: #eee;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    padding: 20px 10px;
+    font-size: 1.5rem;
+  }
+
+  main {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  aside {
+    border-left: none;
+    border-top: 5px solid #aab3aa;
+    margin-top: 20px;
+  }
+
+  .post {
+    padding: 15px;
+  }
+
+  button, input[type="text"], textarea, select {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  #loader img {
+    max-width: 80px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  h1, h2 {
+    font-size: 1.3rem;
+  }
+
+  .post p {
+    font-size: 0.95rem;
+  }
+
+  #new-post input,
+  #new-post textarea {
+    font-size: 0.95rem;
+  }
+}

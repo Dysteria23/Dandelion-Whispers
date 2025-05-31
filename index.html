@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dandelion Whispers</title>
+  <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Georgia&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader">
+    <img src="https://cdn.pixabay.com/animation/2023/08/19/10/22/10-22-18-641_512.gif" alt="Cargando..." />
+  </div>
+
+  <!-- Contenido principal -->
+  <div id="contenido" style="display: none;">
+    <header>
+      <h1>Dandelion Whispers</h1>
+      <p>Gentle thoughts, floating like seeds 🌼</p>
+      <button id="toggle-theme">🌙 Modo Oscuro</button>
+    </header>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="archivo.html">Archivo</a>
+    </nav>
+
+    <section id="new-post" class="hidden">
+      <h2>Crear nueva entrada 📝</h2>
+      <input type="text" id="new-title" placeholder="Título de la entrada" />
+      <input type="text" id="new-category" placeholder="Categoría" />
+      <textarea id="new-content" rows="5" placeholder="Contenido..."></textarea>
+      <button onclick="addPost()">Publicar entrada</button>
+    </section>
+
+    <main>
+      <section class="content">
+        <input type="text" id="search" placeholder="Buscar entradas..." />
+        <select id="category-filter">
+          <option value="">Todas las categorías</option>
+        </select>
+        <div id="posts"></div>
+        <button id="toggle-quote">🌼 Mostrar inspiración</button>
+        <blockquote id="quote" class="hidden"></blockquote>
+      </section>
+
+      <aside>
+        <h3>Sobre mí</h3>
+        <p>Escribo para soltar pensamientos como semillas. 🌱</p>
+        <h3>Categorías</h3>
+        <ul id="aside-categories"></ul>
+      </aside>
+    </main>
+
+    <footer>
+      &copy; 2025 Dandelion Blog | Spread kindness like seeds 🌾
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
